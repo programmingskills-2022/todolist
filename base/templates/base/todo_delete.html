@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %} {% block content %}
+<style>
+  .delete-button {
+    padding: 0.5rem 2rem;
+    background-color: red;
+    border-radius: 0.5rem;
+    color: #f9f1f0;
+    border: none;
+  }
+  .delete-button:hover {
+    cursor: pointer;
+  }
+</style>
+<form method="post" action="">
+  <p>Are you sure for deleting {{obj}} ?</p>
+  {% csrf_token %}
+  <a href="{% url 'home' %}">Go Back</a>
+  <input class="delete-button" type="submit" value="Delete" />
+</form>
+{% endblock content %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{% static 'styles/main.css' %}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&family=Vazirmatn&display=swap"
+      rel="stylesheet"
+    />
+    <title>Todolist</title>
+  </head>
+  <body>
+    {% include 'base/navbar.html' %} {% include 'base/messages.html' %}
+    <p></p>
+    {% block content %} {% endblock content %}
+  </body>
+</html>

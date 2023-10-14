@@ -1,0 +1,9 @@
+{% extends 'base/main.html' %} {% block content %}
+<form class="card" method="post" action="">
+  {% csrf_token %} {{form.as_p}}
+  <div class="div-hor">
+    <a href="{% url 'login' %}">Go Back</a>
+    <input class="todo-button" type="submit" value="register" />
+  </div>
+</form>
+{% endblock content %}

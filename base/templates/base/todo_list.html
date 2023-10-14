@@ -1,0 +1,31 @@
+{% extends 'base/main.html' %} {% block content %}
+
+<style>
+  .todolist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .todolist {
+    padding: 0;
+    list-style-type: none;
+    width: 50%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .todolist {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="todolist-container">
+  {% include 'base/todo_search.html' %} {% if add == True %}
+  <hr2> </hr2>{% include 'base/todo_create.html' %} {% endif %}
+  <ul class="todolist">
+    {% for todo in todolist %} {% include 'base/todo.html' %} {% endfor %}
+  </ul>
+</div>
+{% endblock content %}

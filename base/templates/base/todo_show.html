@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %} {% block content %}
+<div class="card">
+  <h2>Todo title: {{todo.title}}</h2>
+  <p>Todo description: {{todo.description}}</p>
+  {% if todo.checked %}
+  <p>Checked status: Checked</p>
+  {% else %}
+  <p>Checked status: Not checked</p>
+  {% endif %}
+</div>
+{% endblock content %}

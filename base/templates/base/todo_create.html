@@ -1,0 +1,40 @@
+<div class="todo-create-container">
+  <form class="todo-create" method="POST" action="">
+    {% csrf_token %}
+    <div class="todo-field">
+      <label>Title:</label
+      ><input
+        type="text"
+        name="title"
+        value="{{todo.title}}"
+        placeholder="Enter todo title..."
+      />
+    </div>
+    <div class="todo-field">
+      <label>Description:</label>
+      <textarea
+        name="description"
+        type="text"
+        name="description"
+        cols="40"
+        rows="10"
+        placeholder="Enter todo description..."
+      >
+{{todo.description}}</textarea
+      >
+    </div>
+    <div>
+      <label>Is done:</label>
+      {% if todo.checked %}
+      <input type="checkbox" name="checked" checked />
+      {% else %}
+      <input type="checkbox" name="checked" />
+      {% endif %}
+    </div>
+    {% if todo is None %}
+    <input class="todo-button" type="submit" value="create" />
+    {% else %}
+    <input class="todo-button" type="submit" value="update" />
+    {% endif %}
+  </form>
+</div>

@@ -1,0 +1,52 @@
+{% load static %}
+<style>
+  .logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  .header {
+    background-color: #67595e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: solid gray 1px;
+    color: #f9f1f0;
+  }
+  .header-container {
+    padding: 1rem;
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media only screen and (max-width: 768px) {
+    .header-container {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="header">
+  <div class="header-container">
+    <a href="{% url 'home' %}"
+      ><img class="logo" src="{% static 'images/todologo.png' %}"
+    /></a>
+    <h1 class="app-title">To Do List App</h1>
+    <div class="div-hor">
+      <a href="{% url 'login' %}">
+        <img class="logo" src="{% static 'images/avatar.png' %}" />
+      </a>
+      {% if user.is_authenticated %}
+      <p>{{user}}</p>
+      <a class="a-link" style="color: white" href="{% url 'logout' %}"
+        >Logout</a
+      >
+      {% else %}
+      <a class="a-link" style="color: white" href="{% url 'login' %}">Login</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

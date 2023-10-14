@@ -1,0 +1,20 @@
+<style>
+  .add {
+    background-color: #ac8484;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 13px;
+    border-radius: 0.5rem;
+  }
+</style>
+{% if user.is_authenticated %}
+<div class="todo-search-container">
+  <form class="todo-search" method="GET" action="{% url 'home' %}">
+    <input type="text" name="q" placeholder="Search todo..." />
+    <input class="todo-button" type="submit" value="Search" />
+    <a class="add a-link" href="{% url 'add' %}"> Add</a>
+  </form>
+</div>
+{% else %}
+<h1>Please login first!</h1>
+{% endif %}
