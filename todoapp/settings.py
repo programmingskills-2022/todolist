@@ -81,8 +81,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'OPTIONS': {
+            'version': '3.8.3',
+        },
     }
 }
+
 
 # DATABASES = {
 #     'default' : {
@@ -147,6 +151,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://todolist-django-production.up.railway.app'
-]
