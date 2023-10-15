@@ -1,0 +1,4 @@
+.env
+```
+
+This entry tells Git to ignore the `.env` file and not include it in version control.
