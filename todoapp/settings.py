@@ -78,18 +78,11 @@ WSGI_APPLICATION = 'todoapp.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    #     'OPTIONS': {
-    #         'version': '3.8.3',
-    #     },
     'default': {
-    'ENGINE': 'custom_sqlite_backend.CustomSqlite3DatabaseWrapper',
-    'NAME': BASE_DIR / 'db.sqlite3',
-    }    
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3', 
 }
-
+}
 
 # DATABASES = {
 #     'default' : {
